@@ -37,6 +37,6 @@ fs.readdir sourceDir, (err, zs) ->
                         fileDest = path.join xDest, "#{y}.topojson"
                         data = fs.readFileSync fileSource
                         tjs = toTopoJson JSON.parse data
-                        fs.writeFileSync fileDest, tjs
+                        fs.writeFileSync fileDest, JSON.stringify tjs
                         console.log "Created #{fileDest}"
                         
